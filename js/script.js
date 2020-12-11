@@ -4,13 +4,13 @@
 //     const links = document.querySelectorAll('.titles a');
 //     console.log('links:', links);
 //   });
-
+{
 const titleClickHandler = function(event){
     event.preventDefault();
     const clickedElement = this;
     console.log('Link was clicked!');
-    console.log(event)
-  
+    console.log(event);
+
     /* [DONE] remove class 'active' from all article links  */
   
 const activeLinks = document.querySelectorAll('.titles a.active');
@@ -45,12 +45,15 @@ console.log(articleSelector);
 
 const targetArticle = document.querySelector(articleSelector);
 console.log(targetArticle)
-  
+
     /* add class 'active' to the correct article */
-  }
-  
+
+const acivetedArticle = targetArticle.classList.add('active');
+}
   const links = document.querySelectorAll('.titles a');
   
   for(let link of links){
     link.addEventListener('click', titleClickHandler);
+  
   }
+}
