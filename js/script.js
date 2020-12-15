@@ -64,7 +64,7 @@
 
         const articles = document.querySelectorAll(optArticleSelector);
         let html = '';
-        for (let article of articles){
+        for (let article of articles) {
 
             /* get the article id */
 
@@ -102,7 +102,7 @@
         for (let link of links) {
             link.addEventListener('click', titleClickHandler);
         }
-    
+
     };
     generateTitleLinks();
 
