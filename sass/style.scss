@@ -133,8 +133,10 @@ body {
   }
 }
 
-.post-author {
+.post-author a, .post-author {
   font-style: italic;
+  text-decoration: none;
+  color: #fff;
 }
 
 .post-tags {
