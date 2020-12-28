@@ -263,38 +263,38 @@
 
     console.log(clickedElement);
 
+    const author = href.replace('#author-', '');
+    console.log(author);
     const activetedAuthor = clickedElement.classList.add('active');
 
 
     /* [DONE] remove class 'active' from all articles */
 
-    const AuthorsLink = document.querySelectorAll(optArticleAuthorSelector);
-    console.log(AuthorsLink)
-    for (let activeAuthor of activeAuthors) {
-      activeAuthor.classList.remove('active');
+    const authorLinks = document.querySelectorAll('a[href="'+ href +'"]');
+    console.log(authorLinks);
+    for (let authorLink of authorLinks) {
+      authorLink.classList.remove('active');
     };
 
     /* [DONE] get 'href' attribute from the clicked link */
 
-    const acitveAuthorsLink = clickedElement.getAttribute('data-author');
-    // console.log(activeAuthorsLinks);
+    const authorLinksActive = document.querySelectorAll('a[href="' + href + '"]');
+    /* START LOOP: for each found tag link */
+    for (let authorLinkActive of authorLinksActive) {
 
+      /* add class active */
+      authorLinkActive.classList.add('.active');
+      // console.log(tagLink);
 
-    /* [DONE] find the correct article using the selector (value of 'href' attribute) */
-
-    const targetArticle = document.querySelector(articleSelector);
-    // console.log(targetArticle);
-
-    /* [DONE] add class 'active' to the correct article */
-
-    const acivetedArticle = targetArticle.classList.add('active');
+      /* END LOOP: for each found tag link */
+    }
 
     generateTitleLinks('[data-author="' + author + '"]');
   }
 
   function addClickListenersToAuthors() {
     /* find all links to tags */
-    let links = document.querySelectorAll(optArticleAuthorSelector);
+    let links = document.querySelectorAll(optArticleAuthorSelector + ' a');
     /* START LOOP: for each link */
     for (let link of links)
       /* add tagClickHandler as event listener for that link */
